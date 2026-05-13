@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anusha G J | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* Navbar */
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 8%;
+      background:rgba(15,23,42,0.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    nav h2{
+      color:#a855f7;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav ul li a:hover{
+      color:#a855f7;
+    }
+
+    /* Hero */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:120px 8% 50px;
+      text-align:center;
+    }
+
+    .hero-text{
+      max-width:800px;
+    }
+
+    .hero-text h3{
+      color:#cbd5e1;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.2;
+      margin-bottom:15px;
+    }
+
+    .hero-text h1 span{
+      color:#a855f7;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      margin-top:20px;
+      max-width:600px;
+      font-size:17px;
+    }
+
+    .btn-group{
+      margin-top:35px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:10px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .primary-btn{
+      background:#a855f7;
+      color:white;
+    }
+
+    .primary-btn:hover{
+      background:#9333ea;
+      transform:translateY(-3px);
+    }
+
+    .secondary-btn{
+      border:2px solid #a855f7;
+      color:#a855f7;
+    }
+
+    .secondary-btn:hover{
+      background:#a855f7;
+      color:white;
+    }
+
+    .hero-card{
+      width:350px;
+      background:linear-gradient(145deg,#1e293b,#0f172a);
+      border-radius:25px;
+      padding:40px 30px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 25px rgba(168,85,247,0.2);
+      text-align:center;
+    }
+
+    .hero-card img{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #a855f7;
+      margin-bottom:20px;
+    }
+
+    .hero-card h2{
+      margin-bottom:10px;
+    }
+
+    .hero-card p{
+      color:#cbd5e1;
+    }
+
+    /* Sections */
+    section{
+      padding:90px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:60px;
+      color:#a855f7;
+    }
+
+    /* About */
+    .about-box{
+      background:#1e293b;
+      padding:40px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .about-box p{
+      color:#cbd5e1;
+      font-size:17px;
+    }
+
+    /* Skills */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:18px;
+      text-align:center;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 20px rgba(168,85,247,0.3);
+    }
+
+    .skill-card h3{
+      margin-top:10px;
+    }
+
+    /* Projects */
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 20px rgba(168,85,247,0.25);
+    }
+
+    .project-card h3{
+      color:#a855f7;
+      margin-bottom:15px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      margin-bottom:15px;
+    }
+
+    .tech-stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:15px;
+    }
+
+    .tech-stack span{
+      background:#334155;
+      padding:8px 14px;
+      border-radius:30px;
+      font-size:14px;
+    }
+
+    /* Contact */
+    .contact-box{
+      background:#1e293b;
+      padding:40px;
+      border-radius:20px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-box p{
+      margin:15px 0;
+      color:#cbd5e1;
+      font-size:18px;
+    }
+
+    .contact-box a{
+      color:#a855f7;
+    }
+
+    /* Footer */
+    footer{
+      text-align:center;
+      padding:25px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#94a3b8;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .btn-group{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>Anusha G J</h2>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h3>Hello, I'm</h3>
+
+      <h1>Anusha <span>G J</span></h1>
+
+      <h3>Computer Science & Engineering Student</h3>
+
+      <p>
+        Passionate 3rd-year CSE student with strong interest in
+        Web Development, AI, Machine Learning, and Mobile App Development.
+        Looking for internship opportunities to apply technical skills,
+        learn industry practices, and build impactful real-world projects.
+      </p>
+
+      <div class="btn-group">
+        <a href="#projects" class="btn primary-btn">View Projects</a>
+
+        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+      </div>
+    </div>
+
+    </section>
+
+  <!-- About -->
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+      <p>
+        I am a 3rd-year Computer Science Engineering student from
+        Dayananda Sagar College of Engineering, Bengaluru.
+        I enjoy building websites, applications, and smart systems
+        that solve real-world problems.
+        
+        I have worked on projects related to E-Waste Management,
+        Rainwater Harvesting, Crime Record Management,
+        and Women Safety Systems.
+        
+        I am continuously learning new technologies including
+        React, TypeScript, Python, Machine Learning, and Cloud Computing.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>C</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>C++</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>Java</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>Python</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>HTML</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>CSS</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>JavaScript</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>Node.js</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>Express.js</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>React</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>MongoDB</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>GitHub</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>E-Waste Management Web Application</h3>
+
+        <p>
+          Developed a web application to manage and track e-waste collection and recycling.
+        </p>
+
+        <div class="tech-stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Roof Top Rainwater Harvesting System</h3>
+
+        <p>
+          Designed a smart system to monitor and optimize rooftop rainwater harvesting.
+        </p>
+
+        <div class="tech-stack">
+          <span>React</span>
+          <span>TypeScript</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Crime Record Management System</h3>
+
+        <p>
+          Built a desktop application for crime data management with Women Safety features like SOS alert and emergency contact system.
+        </p>
+
+        <div class="tech-stack">
+          <span>Java</span>
+          <span>Java Swing</span>
+          <span>MySQL</span>
+          <span>JDBC</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-box">
+
+      <p><strong>Phone:</strong> 9113674512</p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:anushagj2005@gmail.com">
+          anushagj2005@gmail.com
+        </a>
+      </p>
+
+      <p><strong>Location:</strong> Bengaluru, India</p>
+
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/anushagj5" target="_blank">
+          github.com/anushagj5
+        </a>
+      </p>
+
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/anusha-g-j" target="_blank">
+          linkedin.com/in/anusha-g-j
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Anusha G J | Portfolio Website</p>
+  </footer>
+
+</body>
+</html>
